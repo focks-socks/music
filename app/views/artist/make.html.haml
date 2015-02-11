@@ -1,0 +1,8 @@
+.container.col-lg-12
+	%h1
+		Create Artist
+	= form_for :artist, :url => {:controller => 'artist', :action => 'create'} do |f|
+		= label_tag :name, "Name"
+		= f.text_field :name, :label => "Name"
+		.container
+			= f.submit "Create", {:class => "btn btn-primary"}

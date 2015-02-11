@@ -6,6 +6,9 @@ Rails.application.routes.draw do
    root 'page#index'
    get 'artist/albums/:id' => 'artist#albums'
 
+   get 'artist/create' => 'artist#make'
+   resources :artist, :only => [:create] 
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
