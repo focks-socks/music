@@ -1,0 +1,18 @@
+.container
+	.row
+		.container.col-lg-6
+			%button.btn.btn-primary{ :type => 'button'}
+				Add Album / Artist
+			%ul#artist-list
+				- @artists.each do |artist|
+					%li.artist-element.col-lg-3{ :id => "artist#{artist.id}", :name => "artist#{artist.id}" }
+						= artist.name
+		.container.col-lg-6
+			%h1
+				Albums
+			These are the albums for this artist:
+			.container.col-lg-12#album-list{:name => "album-list" }
+				%ul
+					- @albums.each do |album|
+						%li
+							= album.title
